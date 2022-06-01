@@ -1,0 +1,65 @@
+﻿@model Agrotech_Management_System_Data.Models.Product
+@{
+    ViewBag.Title = "ProductDetails";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="~/Scripts/css/Home_Style.css" rel="stylesheet" />
+    <link href="~/Scripts/css/product.css" rel="stylesheet" />
+    <link href="~/Scripts/css/viewproduct.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Inter&family=Kumbh+Sans:wght@400;700&family=Noto+Sans&family=Open+Sans:ital,wght@0,500;1,400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+      
+        <main>
+            <h1>Product Details</h1>
+
+            <div class="content">
+                <!-- <table class="tabledata"> -->
+                <div class="grid">
+                    <div class="first-grid">
+                        Product Name
+                    </div>
+                    <div class="second-grid">
+                        Category
+                    </div>                  
+                    <div class="third-grid">
+                        Price
+                    </div>
+                   
+                    <div class="fourth-grid">
+                        <p id="name">@Model.Name</p>
+                    </div>
+                    <div class="five-grid">
+                        <p id="category">@Model.Category</p>
+                    </div>
+                    <div class="six-grid">
+                        <p id="price">@Model.Price</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn">
+                <button  onclick="@("window.location.href = '" + Url.Action("Payment","payment") + "'");">Place Order</button>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="./js/script.js"></script>
+
+    <script>
+      
+
+    </script>
+</body>
+</html>
+

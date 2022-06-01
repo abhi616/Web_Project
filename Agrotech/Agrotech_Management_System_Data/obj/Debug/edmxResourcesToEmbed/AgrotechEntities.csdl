@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_Agrotech_Mgt_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Contact_Details">
+    <Key>
+      <PropertyRef Name="Contact_ID" />
+    </Key>
+    <Property Name="Contact_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mobile_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login_Details">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Card_No" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Expiry" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CV" Type="Int32" Nullable="false" />
+    <Property Name="Total_Amount" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product_Details">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="Product_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Product_Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Register_Details">
+    <Key>
+      <PropertyRef Name="Register_ID" />
+    </Key>
+    <Property Name="Register_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Confirm_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mobile_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date_Of_Birth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DB_Agrotech_Mgt_SystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Contact_Details" EntityType="Self.Contact_Details" />
+    <EntitySet Name="Login_Details" EntityType="Self.Login_Details" />
+    <EntitySet Name="Payment_Details" EntityType="Self.Payment_Details" />
+    <EntitySet Name="Product_Details" EntityType="Self.Product_Details" />
+    <EntitySet Name="Register_Details" EntityType="Self.Register_Details" />
+    <FunctionImport Name="Sp_Insert_Contact" ReturnType="Collection(DB_Agrotech_Mgt_SystemModel.Sp_Insert_Contact_Result)" />
+    <FunctionImport Name="Sp_Insert_Login" ReturnType="Collection(DB_Agrotech_Mgt_SystemModel.Sp_Insert_Login_Result)">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Insert_Payment" ReturnType="Collection(DB_Agrotech_Mgt_SystemModel.Sp_Insert_Payment_Result)">
+      <Parameter Name="p1" Mode="In" Type="Int32" />
+      <Parameter Name="p2" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Insert_Product" ReturnType="Collection(DB_Agrotech_Mgt_SystemModel.Sp_Insert_Product_Result)">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_Insert_Register" ReturnType="Collection(DB_Agrotech_Mgt_SystemModel.Sp_Insert_Register_Result)">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Sp_Insert_Contact_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Mobile_No" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Email_ID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Message" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Sp_Insert_Login_Result">
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Sp_Insert_Payment_Result">
+    <Property Type="Int32" Name="Card_No" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Expiry" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="CV" Nullable="false" />
+    <Property Type="Int32" Name="Total_Amount" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Sp_Insert_Product_Result">
+    <Property Type="String" Name="Product_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Product_Category" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Price" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Sp_Insert_Register_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Confirm_Password" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Mobile_No" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Email_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Date_Of_Birth" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="50" />
+  </ComplexType>
+</Schema>

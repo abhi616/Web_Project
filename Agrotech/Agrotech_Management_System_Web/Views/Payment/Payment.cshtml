@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Payment";
+}
+
+
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Payment</title>
+    <link rel="stylesheet" href="~/Scripts/css/Home_Style.css">
+    <link rel="stylesheet" href="~/Scripts/css/viewproduct.css">
+    <link rel="stylesheet" href="~/Scripts/css/Login.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Inter&family=Kumbh+Sans:wght@400;700&family=Noto+Sans&family=Open+Sans:ital,wght@0,500;1,400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <main>
+            <h2>Make Payment</h2>
+
+            <div class="content">
+                <div class="first-content">
+                    <div class="content-box">
+                        <p class="lbl-farm">Card No</p>
+                        <input type="text" id="cardno" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Name on Card</p>
+                        <input type="text" id="nameoncard" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Address</p>
+                        <input type="text" id="address" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Card Type</p>
+                        <input type="text" id="cardtype" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Card Expiry</p>
+                        <input type="date" id="cardexpiry" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">CV Number</p>
+                        <input type="number" id="cvnumber" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Total Amount</p>
+                        <input type="number" id="totalamount" class="txt-farm">
+                    </div>
+                    <div class="buttons">
+                        <button class="submit" onclick="getData()">Submit</button>
+                        <button class="reset" onclick="reset()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="login-image">
+                    <img src="~/Scripts/image/atm.jpg" />
+
+                </div>
+            </div>
+
+
+        </main>
+
+    </div>
+    <script src="~/Scripts/script.js"></script>
+    <script>
+        function getData() {
+            var cardno = document.getElementById("cardno").value;
+            var name = document.getElementById("nameoncard").value;
+            var address = document.getElementById("address").value;
+            var type = document.getElementById("cardtype").value;
+            var expiry = document.getElementById("cardexpiry").value;
+            var cv = document.getElementById("cvnumber").value;
+            var total = document.getElementById("totalamount").value;
+
+            $.ajax({
+                type: "POST",
+                url: "/Payment/MakePayment",
+                dataType: "json",
+                data: {
+                    Card_No: cardno, Name: name, Address: address, Type: type,
+                    Expiry: expiry, CV: cv, Total_Amount: total
+                },
+                success: function (result) {
+                    alert('Sucessfull');
+                    $("#cardno").val("");
+                    $("#nameoncard").val("");
+                    $("#address").val("");
+                    $("#cardtype").val("");
+                    $("#cardexpiry").val("");
+                    $("#cvnumber").val("");
+                    $("#totalamount").val("");
+                    $("#totalamount").focus();
+                },
+                error: function (result) {
+                    alert('Payment Successfull. You Will Get Your Order  On 3 Days');
+                    $("#cardno").val("");
+                    $("#nameoncard").val("");
+                    $("#address").val("");
+                    $("#cardtype").val("");
+                    $("#cardexpiry").val("");
+                    $("#cvnumber").val("");
+                    $("#totalamount").val("");
+                    $("#totalamount").focus();
+                }
+            });
+        }
+
+        function reset() {
+           document.getElementById("cardno").value = "";
+           document.getElementById("nameoncard").value = "";
+           document.getElementById("address").value = "";
+           document.getElementById("cardtype").value = "";
+           document.getElementById("cardexpiry").value = "";
+           document.getElementById("cvnumber").value = "";
+            document.getElementById("totalamount").value = "";
+            document.getElementById("cardno").focus();
+        }
+    </script>
+</body>
+
+

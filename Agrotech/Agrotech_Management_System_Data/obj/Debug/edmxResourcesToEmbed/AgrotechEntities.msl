@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_Agrotech_Mgt_SystemModelStoreContainer" CdmEntityContainer="DB_Agrotech_Mgt_SystemEntities">
+    <EntitySetMapping Name="Contact_Details">
+      <EntityTypeMapping TypeName="DB_Agrotech_Mgt_SystemModel.Contact_Details">
+        <MappingFragment StoreEntitySet="Contact_Details">
+          <ScalarProperty Name="Contact_ID" ColumnName="Contact_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Email_ID" ColumnName="Email_ID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login_Details">
+      <EntityTypeMapping TypeName="DB_Agrotech_Mgt_SystemModel.Login_Details">
+        <MappingFragment StoreEntitySet="Login_Details">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_Details">
+      <EntityTypeMapping TypeName="DB_Agrotech_Mgt_SystemModel.Payment_Details">
+        <MappingFragment StoreEntitySet="Payment_Details">
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Card_No" ColumnName="Card_No" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+          <ScalarProperty Name="CV" ColumnName="CV" />
+          <ScalarProperty Name="Total_Amount" ColumnName="Total_Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Details">
+      <EntityTypeMapping TypeName="DB_Agrotech_Mgt_SystemModel.Product_Details">
+        <MappingFragment StoreEntitySet="Product_Details">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Product_Category" ColumnName="Product_Category" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Register_Details">
+      <EntityTypeMapping TypeName="DB_Agrotech_Mgt_SystemModel.Register_Details">
+        <MappingFragment StoreEntitySet="Register_Details">
+          <ScalarProperty Name="Register_ID" ColumnName="Register_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Confirm_Password" ColumnName="Confirm_Password" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Email_ID" ColumnName="Email_ID" />
+          <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Sp_Insert_Contact" FunctionName="DB_Agrotech_Mgt_SystemModel.Store.Sp_Insert_Contact">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Agrotech_Mgt_SystemModel.Sp_Insert_Contact_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Email_ID" ColumnName="Email_ID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_Insert_Login" FunctionName="DB_Agrotech_Mgt_SystemModel.Store.Sp_Insert_Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Agrotech_Mgt_SystemModel.Sp_Insert_Login_Result">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_Insert_Payment" FunctionName="DB_Agrotech_Mgt_SystemModel.Store.Sp_Insert_Payment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Agrotech_Mgt_SystemModel.Sp_Insert_Payment_Result">
+          <ScalarProperty Name="Card_No" ColumnName="Card_No" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+          <ScalarProperty Name="CV" ColumnName="CV" />
+          <ScalarProperty Name="Total_Amount" ColumnName="Total_Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_Insert_Product" FunctionName="DB_Agrotech_Mgt_SystemModel.Store.Sp_Insert_Product">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Agrotech_Mgt_SystemModel.Sp_Insert_Product_Result">
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Product_Category" ColumnName="Product_Category" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_Insert_Register" FunctionName="DB_Agrotech_Mgt_SystemModel.Store.Sp_Insert_Register">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Agrotech_Mgt_SystemModel.Sp_Insert_Register_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Confirm_Password" ColumnName="Confirm_Password" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Email_ID" ColumnName="Email_ID" />
+          <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

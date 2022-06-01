@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "ContactUs";
+}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrotech</title>
+    <link href="~/Scripts/css/login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Inter&family=Kumbh+Sans:wght@400;700&family=Noto+Sans&family=Open+Sans:ital,wght@0,500;1,400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+
+
+        <main>
+            <h2>CONTACT US</h2>
+
+            <div class="content">
+                <div class="first-content">
+                    <div class="content-box">
+                        <p class="lbl-farm">Name</p>
+                        <input type="text" id="name" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Mobile No</p>
+                        <input type="number" id="mobile" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Email</p>
+                        <input type="email" id="email" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Message</p>
+                        <input type="text" id="message" class="txt-farm">
+                    </div>
+                    <div class="buttons">
+                        <button class="submit" onclick="getData()">Submit</button>
+                        <button class="reset" onclick="reset()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="login-image">
+                    <img src="~/Scripts/image/map.jpg" />
+
+                    <h3>GET IN TOUCH</h3>
+                    <h5>Farmtech@gmail.com | +91 8425921120</h5>
+                </div>
+            </div>
+
+        </main>
+
+
+    </div>
+    <script src="~/Scripts/script.js"></script>>
+
+    <script>
+        function getData() {
+            var name = document.getElementById('name').value;
+            var mobile = document.getElementById('mobile').value;
+            var email = document.getElementById('email').value;
+            var msg = document.getElementById('message').value;
+
+            $.ajax({
+                type: "POST",
+                url: "/ContactUs/AddContact",
+                dataType: "json",
+                data: { Name: name, Mobile_No: mobile, Email_ID: email, Message: msg },
+                success: function (result) {
+                    alert('Thanks for Contacting With Us');
+                    $('#name').val("");
+                    $('#mobile').val("");
+                    $('#email').val("");
+                    $('#message').val("");
+                },
+
+                error: function (result) {
+                    alert('Thanks for Contacting With Us');
+                    $('#name').val("");
+                    $('#mobile').val("");
+                    $('#email').val("");
+                    $('#message').val("");
+                }
+               
+            });
+
+        }
+
+        function reset() {
+            document.getElementById("name").value = "";
+            document.getElementById("mobile").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            document.getElementById("name").focus();
+        }
+    </script>
+</body>
+

@@ -1,0 +1,12 @@
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\bin\Debug\Agrotech_Management_System_Data.dll.config
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\bin\Debug\Agrotech_Management_System_Data.dll
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\bin\Debug\Agrotech_Management_System_Data.pdb
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\bin\Debug\EntityFramework.dll
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\bin\Debug\EntityFramework.xml
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\obj\Debug\Agrotech_Management_System_Data.csproj.AssemblyReference.cache
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\obj\Debug\Agrotech_Management_System_Data.csproj.CoreCompileInputs.cache
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\obj\Debug\Agrotech_Management_System_Data.csproj.CopyComplete
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\obj\Debug\Agrotech_Management_System_Data.dll
+D:\Agrotech\Agrotech\Agrotech_Management_System_Data\obj\Debug\Agrotech_Management_System_Data.pdb

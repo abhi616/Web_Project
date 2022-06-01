@@ -1,0 +1,28 @@
+﻿main h1 {
+    font-weight: 800;
+    color: #4e6c07;
+    margin-top: 2rem;
+    border-bottom: 1px solid #486602;
+}
+
+.column {
+    float: left;
+    width: 14%;
+    padding: 10px;
+    font-size: 0.6rem;
+}
+
+.row {
+    margin-top: 4rem;
+}
+
+.btn button {
+    border: none;
+    background-color: #648E04;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.6rem 1.4rem;
+    margin: 2rem 2rem 0 0;
+    color: white;
+    border-radius: 0.4rem;
+}

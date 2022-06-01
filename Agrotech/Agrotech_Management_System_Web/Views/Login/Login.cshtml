@@ -1,0 +1,118 @@
+﻿@model Agrotech_Management_System_Data.Models.Register
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<!DOCTYPE html>
+@using (Html.BeginForm("Login", "Login")){ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrotech</title>
+    <link href="~/Scripts/css/login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Inter&family=Kumbh+Sans:wght@400;700&family=Noto+Sans&family=Open+Sans:ital,wght@0,500;1,400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        #plist {
+            display: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <style>
+        .login{
+            margin: 40px;
+        }
+
+        span{
+            font-weight: bold;
+        }
+        .lbl-link {
+            text-decoration: underline;
+            color: blue;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 50px;
+        }
+    </style>
+    <div class="login">
+        <span>Username</span>
+        <input type="text" name="Username" value="" class="txt-farm" style="width: 20%" /><br />
+        <span>Password</span>
+        <input type="password" name="Password" value="" class="txt-farm" style="width: 20%" />
+        <button class="submit">Login</button>
+    </div>
+    <div>
+        <a onclick="@("window.location.href= '" + Url.Action("Register","Register") + "'");" class="lbl-link">Don't Have Account ? Register Now</a>
+    </div>
+    
+</body>
+
+}
+    @*<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Agrotech</title>
+        <link href="~/Scripts/css/login.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Inter&family=Kumbh+Sans:wght@400;700&family=Noto+Sans&family=Open+Sans:ital,wght@0,500;1,400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <main>
+                <h2>LOGIN TO YOUR ACCOUNT</h2>
+
+                <div class="content">
+                    <div class="first-content">
+
+                        <div class="content-box">
+                            <p class="lbl-farm">Userame</p>
+                            <input type="text" id="username" class="txt-farm" name="Username">
+                        </div>
+                        <div class="content-box">
+                            <p class="lbl-farm">Password</p>
+                            <input type="password" id="password" class="txt-farm" name="Password">
+                        </div>
+
+                        <div class="buttons">
+                            <button class="submit" type="button" onclick="Logintest()">Submit</button>
+                            <button class="reset">Reset</button>
+                        </div>
+
+                    </div>
+
+                    <div class="login-image">
+
+                     
+                    </div>
+                </div>
+
+
+            </main>
+        </div>
+       <script>
+           function Logintest() {
+               var username = document.getElementById("username").value;
+               var password = document.getElementById("password").value;
+
+               $.ajax({
+                   type:'POST',
+                   url: 'Login/Login',
+                   data: { Username:username, Password:password },
+                   success: function () {
+                       console.log("hello");
+                   }
+               });
+           }
+       </script>
+    </body>*@
+

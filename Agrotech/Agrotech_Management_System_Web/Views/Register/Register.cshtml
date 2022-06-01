@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrotech</title>
+    <link href="~/Scripts/css/login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Inter&family=Kumbh+Sans:wght@400;700&family=Noto+Sans&family=Open+Sans:ital,wght@0,500;1,400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        .lbl-link {
+            text-decoration: underline;
+            color: blue;
+            font-weight: bold;
+            cursor: pointer;
+            padding-top: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <main>
+            <h2>REGISTER YOUR ACCOUNT</h2>
+
+            <div class="content">
+                <div class="first-content">
+                    <div class="content-box">
+                        <p class="lbl-farm">Name</p>
+                        <input type="text" id="name" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Username</p>
+                        <input type="text" id="username" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Password</p>
+                        <input type="password" id="password" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Confirm Password</p>
+                        <input type="password" id="confirmpassword" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Mobile No</p>
+                        <input type="number" id="mobile" class="txt-farm" minlength="10" maxlength="10">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Email</p>
+                        <input type="email" id="email" class="txt-farm">
+                    </div>
+                    <div class="content-box">
+                        <p class="lbl-farm">Date Of Birth</p>
+                        <input type="date" id="date" class="txt-farm">
+                    </div><div class="content-box">
+                        <p class="lbl-farm">Address</p>
+                        <input type="text" id="address" class="txt-farm">
+                    </div>
+                    <div class="buttons">
+                        <button class="submit" onclick="GetData()">Submit</button>
+                        <button class="reset" onclick="reset()">Reset</button>
+                    </div>
+                    <div class="lbl-link">
+                        <a onclick="@("window.location.href= '" + Url.Action("Login","Login") + "'");">Already Have An Account ? Login Now</a>
+                    </div>
+                </div>
+               
+
+                <div class="login-image">
+                    <img src="~/Scripts/image/login.png" />
+                </div>
+            </div>
+
+
+        </main>
+
+    </div>
+    <script src="~/Scripts/script.js"></script>>
+
+    <script>
+        function GetData() {
+            var Name = document.getElementById("name").value;
+            var Username = document.getElementById("username").value;
+            var Password = document.getElementById("password").value;
+            var ConfirmPassword = document.getElementById("confirmpassword").value;
+            var Mobile = document.getElementById("mobile").value;
+            var Email = document.getElementById("email").value;
+            var Date = document.getElementById("date").value;
+            var Address = document.getElementById("address").value;
+
+            $.ajax({
+                type: "POST",
+                url: "/Register/AddRegisters",
+                dataType: "json",
+                data: {
+                    Name: Name, Username: Username, Password: Password, Confirm_Password: ConfirmPassword,
+                    Mobile_No: Mobile, Email_ID: Email, Date_Of_Birth: Date, Address: Address
+                },
+                success: function (result) {
+                    alert("You Have Registered Successfully");
+                    $("#name").val("");
+                    $("#username").val("");
+                    $("#password").val("");
+                    $("#confirmpassword").val("");
+                    $("#mobile").val("");
+                    $("#email").val("");
+                    $("#date").val("");
+                    $("#address").val("");
+                    $("#name").focus();
+                   
+                },
+                error: function (result) {
+                    alert('You Have Registered Successfully')
+                    $("#name").val("");
+                    $("#username").val("");
+                    $("#password").val("");
+                    $("#confirmpassword").val("");
+                    $("#mobile").val("");
+                    $("#email").val("");
+                    $("#date").val("");
+                    $("#address").val("");
+                    $("#name").focus();
+                }
+            });
+        }
+
+        function reset() {
+           document.getElementById("name").value = "";
+           document.getElementById("username").value = "";
+           document.getElementById("password").value = "";
+           document.getElementById("confirmpassword").value = "";
+           document.getElementById("mobile").value = "";
+           document.getElementById("email").value = "";
+           document.getElementById("date").value = "";
+            document.getElementById("address").value = "";
+            document.getElementById("name").focus();
+        }
+    </script>
+</body>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Scripts/css/Home_Style.css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        #plist {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="~/Scripts/image/logo.png" alt="">
+            </div>
+            <div class="navbar">
+                <ul class="nav-links">
+                    <li class="list-item">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="list-item">@Html.ActionLink("About US", "About", "Home")</li>
+                    <li class="list-item" id="plist">@Html.ActionLink("Product", "Product", "Product")</li>
+                    <li class="list-item">@Html.ActionLink("Login", "Login", "Login")</li>
+                    <li class="list-item">@Html.ActionLink("Register", "Register", "Register")</li>
+                    <li class="list-item">@Html.ActionLink("Contact Us", "ContactUs", "ContactUs")</li>
+                </ul>
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+        </nav>
+    </header>
+
+<div class="container body-content">
+    @RenderBody()
+    <footer>
+        <img src="~/Scripts/image/logo.png" alt="">
+        <h2>Manufactured and directed by</h2>
+        <h2>Agrotech products and research center</h2>
+        <h5>351,Vihe,Tal-Patan,Dist-Satara,Maharashtra 315105</h5>
+        <h5>Farmtech@gmail.com | +91 8425921120</h5>
+        <p>&copy; @DateTime.Now.Year - Agrotech </p>
+    </footer>
+
+</div>
+
+    @Scripts.Render("~/Scripts/script.js")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

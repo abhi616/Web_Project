@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agrotech_Management_System_Web", "Agrotech_Management_System_Web\Agrotech_Management_System_Web.csproj", "{C136B8BC-CBF0-400A-8460-74E5A63E1041}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agrotech_Management_System_Data", "Agrotech_Management_System_Data\Agrotech_Management_System_Data.csproj", "{6A7F74C3-2271-4C21-B6EE-81056C7F1266}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C136B8BC-CBF0-400A-8460-74E5A63E1041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C136B8BC-CBF0-400A-8460-74E5A63E1041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C136B8BC-CBF0-400A-8460-74E5A63E1041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C136B8BC-CBF0-400A-8460-74E5A63E1041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A7F74C3-2271-4C21-B6EE-81056C7F1266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A7F74C3-2271-4C21-B6EE-81056C7F1266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A7F74C3-2271-4C21-B6EE-81056C7F1266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A7F74C3-2271-4C21-B6EE-81056C7F1266}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0198B5AD-8DB2-418A-9512-515E20C9187D}
+	EndGlobalSection
+EndGlobal
